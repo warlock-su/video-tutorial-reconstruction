@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Shorten installation and usage documentation; remove generic Git policy.
+- Remove tests of Git's own update and conflict behavior. Keep skill-bundle checks.
+
 ## 1.2.0
 
 First public packaging of an existing, field-refined Hermes skill.

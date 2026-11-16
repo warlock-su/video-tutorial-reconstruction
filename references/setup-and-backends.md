@@ -19,9 +19,9 @@ selects and exercises suitable tools for each tutorial.
   executable versions before a run.
 - A local video file or an authorized source. `yt-dlp` is optional for supported
   network sources. Optional subtitles never replace visual evidence.
-- Python 3.10+ and Git for developer installation and repository checks. The
-  bundled tests use only the Python standard library. `curl` is optional
-  when another HTTP client is available.
+- Python 3.10+ for the bundle checks, using only the standard library.
+  Git is needed only when working from a checkout. `curl` is optional when
+  another HTTP client is available.
 - Image crop/inspection, archive-integrity, and SHA-256 tools, provided by the
   agent's tools, Python libraries, or suitable system utilities.
 - The exact target editor/runtime when executable verification is required.
@@ -69,5 +69,5 @@ Use `references/source-acquisition-and-preflight.md` for acquisition failures.
 
 Put downloads, frames, ledgers, generated articles, application projects, and
 archives in a separate task work directory, not in this skill's Git checkout.
-The checkout is only the reusable skill and its tests/docs. `.gitignore` is a
-safety net, not a substitute for inspecting `git diff --cached` before publishing.
+The checkout is only the reusable skill and its tests/docs. Private footage,
+credentials, and machine-local settings are not part of the shared package.

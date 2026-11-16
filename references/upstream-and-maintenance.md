@@ -1,39 +1,23 @@
-# Skill repository maintenance and research-source comparison
+# Skill maintenance and research-source comparison
 
-## Update this skill from Git
+## Maintain this skill
 
-The skill's own repository is
-https://github.com/warlock-su/video-tutorial-reconstruction.
-Video2GUI is research inspiration, not the source branch to merge into it.
+Repository: https://github.com/warlock-su/video-tutorial-reconstruction.
+Video2GUI is research inspiration, not this skill's source branch.
 
-1. Locate the actual installation and checkout before editing. In developer mode,
-   `skills.external_dirs` registers the repository itself; edit that source, not
-   a second copy. `skill_manage` can update a writable external skill in place,
-   but its changes remain local until committed. Do not replace this with a
-   symlink untested for writes: some Hermes versions read linked directories but
-   omit them from skill_manage's directory traversal. Preserve other entries
-   whenever editing the external-directory list through `hermes config set`.
-2. Inspect `git status --short`, `git remote -v`, and `git rev-parse HEAD`. Keep
-   machine-local settings and task evidence outside the repository. Preserve
-   uncommitted lessons; do not use reset, clean, force-push, or stash blindly.
-3. For an unmodified consumer checkout, use `git pull --ff-only`, then run
-   `python3 -m unittest discover -s tests -v`. If there are local edits, stop and
-   review/commit them before updating. The registered directory needs no reinstallation after a
-   pull; a new Hermes session is the most portable way to refresh its skill index.
-4. For a native Hub installation, use `hermes skills check` and
-   `hermes skills update video-tutorial-reconstruction`. Native installs are
-   copies, not Git working trees. Locally modified installs are normally skipped;
-   inspect changes instead of using `--force` by default. Do not mix both modes
-   in one profile, because duplicate names obscure the active source.
-5. Make focused changes: always-needed gates belong in SKILL.md; conditional
-   detail belongs in topical references. Preserve serial inference, full visual
-   coverage, continuity, local-first compact audits, source-code parity, and
-   clean-runtime/package checks.
-6. Before release, run the full tests, inspect staged content for secrets/private
-   data, and exercise changed scripts with disposable profiles. A successful
-   structural check is not proof of a new video reconstruction. Commit/push only
-   the intended files; remote publication requires authorization. Verify the
-   actual remote commit/content after pushing before reporting success.
+- Edit the source actually loaded by the harness. Hermes can use a writable
+  checkout through `skills.external_dirs`; a native installation is a separate
+  managed copy. Use the harness's own installation and update mechanism.
+- Keep machine-local settings, credentials, and per-video evidence outside the
+  reusable skill package.
+- Keep always-needed gates in SKILL.md and conditional detail in topical
+  references. Preserve serial inference, full visual coverage, continuity,
+  compact local-first audits, source-code parity, and clean-runtime checks.
+- Run the bundle checks after edits. Structural validation is not a new video
+  reconstruction; report actual model/application runs separately.
+- Keep public documentation focused on installation, use, dependencies, and
+  skill-specific behavior, not generic Git practices. Publish changes only when
+  requested.
 
 ## Compare Video2GUI only when requested
 
