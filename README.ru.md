@@ -29,8 +29,11 @@
 В актуальном Hermes:
 
 ```bash
-hermes skills install warlock-su/video-tutorial-reconstruction
+hermes skills install warlock-su/video-tutorial-reconstruction/
 ```
+
+Завершающий `/` важен: он явно указывает корень репозитория, где лежит SKILL.md.
+Такой путь требуется текущему парсеру идентификаторов Hermes.
 
 Прочитай результат сканирования стороннего скилла. Некоторые версии сканера
 Hermes дают этому репозиторию **CAUTION** из-за команд клонирования в README,

@@ -37,8 +37,11 @@ reproduction of the Video2GUI research pipeline.
 With a current Hermes installation:
 
 ```bash
-hermes skills install warlock-su/video-tutorial-reconstruction
+hermes skills install warlock-su/video-tutorial-reconstruction/
 ```
+
+Keep the trailing `/`: it selects the repository root, where SKILL.md lives.
+The current Hermes identifier parser requires that explicit root path.
 
 Review the community-skill security scan and any confirmation prompt. Some
 Hermes scanner versions mark this repository **CAUTION** for documented clone
@@ -46,7 +49,7 @@ commands, subprocess-based Git-update tests, or prose about encoded image
 payloads and credential handling. Read the actual findings: those categories
 are not permission to ignore a real credential or network-exfiltration issue.
 If you have reviewed the current bundle and accept the reported cautions, rerun
-with `hermes skills install warlock-su/video-tutorial-reconstruction --force`.
+with `hermes skills install warlock-su/video-tutorial-reconstruction/ --force`.
 Never override an unknown finding blindly; a dangerous verdict remains blocked.
 Open a new Hermes session if the skill index has not refreshed, then invoke:
 
