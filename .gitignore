@@ -1,0 +1,29 @@
+# Machine-local configuration and credentials
+.env
+.env.*
+!.env.example
+*.local.*
+local/
+# Per-video evidence and outputs belong outside this source repository
+work/
+artifacts/
+reports/
+frames/
+videos/
+*.mp4
+*.mkv
+*.webm
+*.mov
+*.zip
+*.tar
+*.tar.gz
+# Local runtimes and editor state
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.godot/
+.DS_Store
+.vscode/
+.idea/
